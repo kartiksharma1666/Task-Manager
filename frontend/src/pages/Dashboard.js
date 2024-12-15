@@ -18,11 +18,11 @@ const Dashboard = () => {
     const fetchDashboardData = async () => {
       try {
         // Fetch tasks
-        const tasksResponse = await axios.get('http://localhost:5000/api/tasks');
+        const tasksResponse = await axios.get('https://task-manager-5-0aq7.onrender.com/api/tasks');
         setTasks(tasksResponse.data);
 
         // Fetch statistics
-        const statsResponse = await axios.get('http://localhost:5000/api/statistics');
+        const statsResponse = await axios.get('https://task-manager-5-0aq7.onrender.com/api/statistics');
         setStats(statsResponse.data);
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
   const handleTaskSubmit = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/tasks');
+      const response = await axios.get('https://task-manager-5-0aq7.onrender.com/api/tasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -53,8 +53,8 @@ const Dashboard = () => {
 
   const handleDelete = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`);
-      const response = await axios.get('http://localhost:5000/api/tasks');
+      await axios.delete(`https://task-manager-5-0aq7.onrender.com/api/tasks/${taskId}`);
+      const response = await axios.get('https://task-manager-5-0aq7.onrender.com/api/tasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error deleting task:', error);

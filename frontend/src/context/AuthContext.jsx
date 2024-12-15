@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const res = await axios.post("https://task-manager-5-0aq7.onrender.com/api/auth/login", { email, password });
       localStorage.setItem("token", res.data.token); // Save token to localStorage
       setUser({ email }); // Set user data
       navigate("/dashboard"); // Navigate to dashboard after successful login
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password) => {
     try {
-      await axios.post("http://localhost:5000/api/auth/register", { email, password });
+      await axios.post("https://task-manager-5-0aq7.onrender.com/api/auth/register", { email, password });
       navigate("/login"); // Navigate to login page after successful registration
     } catch (err) {
       console.error(err.response.data.error); // Handle registration error

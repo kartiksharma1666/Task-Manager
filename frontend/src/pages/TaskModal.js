@@ -55,13 +55,13 @@ const TaskModal = ({ open, onClose, taskData, onTaskSubmit }) => {
 
       if (taskData) {
         // Update existing task
-        await axios.put(`http://localhost:5000/api/tasks/${taskData._id}/status`, {
+        await axios.put(`https://task-manager-5-0aq7.onrender.com/api/tasks/${taskData._id}/status`, {
           status: task.status,
           actualEndTime: task.endTime,
         });
       } else {
         // Create a new task
-        await axios.post('http://localhost:5000/api/tasks', task);
+        await axios.post('https://task-manager-5-0aq7.onrender.com/api/tasks', task);
       }
 
       onTaskSubmit(); // Notify parent component of the successful submission
